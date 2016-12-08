@@ -1,0 +1,41 @@
+body {
+	padding: 20px;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+form .flex-element, input {
+	width: 90%;
+	align-items: center;
+	margin: 5px;
+	height: 30px;
+	padding: 5px 10px;
+	box-sizing: content-box;
+}
+
+.flex-element {
+	width: 90%;
+	margin: 5px;
+}
+
+#error-text {
+	color: red;
+}
+
+th, td {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal !important;
+}
+
+.name {
+	min-width: 120px;
+	width: 120px;
+}

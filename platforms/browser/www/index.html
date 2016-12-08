@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OKPO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta charset="utf-8">
+	<script src="./jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" type="text/css" href="./datatables.min.css">
+	<script src="./datatables.min.js"></script>
+	<script src="script.js"></script>
+	<script>
+		$(document).ready( onReady );
+	</script>
+</head>
+<body>
+	<h3>Поиск ОКПО и других кодов по ИНН</h3>
+	<form class="flex-container">
+		<input type="text" id="inn" placeholder="Введите ИНН" value="" class="flex-element">
+		<input type="hidden" id="okpo" value="">
+		<input type="hidden" id="ogrn" value="">
+		<input type="hidden" id="request-id" value="">
+		<img src="" id="captcha-img" alt="captcha">
+		<input type="text" id="captcha-text" placeholder="Введите код" value="" class="flex-element">
+		<input type="button" id="submit-bt" onclick="getInfo();" value="Найти" class="flex-element">
+	</form>
+	<div id='error-text' style="display:none;"  class="flex-element"></div>
+	<div id="result" style="display:none;"  class="flex-container">
+		<div class="flex-element"><span id="name-res"></span></div>
+		<div class="flex-element">ИНН: <span id="inn-res"></span></div>
+		<div class="flex-element">ОКПО: <span id="okpo-res"></span></div>
+		<div class="flex-element">ОГРН: <span id="ogrn-res"></span></div>
+		<div class="flex-element">Дата регистрации: <span id="regdate-res"></span></div>
+		<div class="flex-element">ОКФС: <span id="okfs-res"></span> (<span id="okfs-name-res"></span>)</div>
+		<div class="flex-element">ОКОГУ: <span id="okogu-res"></span> (<span id="okogu-name-res"></span>)</div>
+		<div class="flex-element">ОКТМО: <span id="oktmo-res"></span> (<span id="oktmo-name-res"></span>)</div>
+		<div class="flex-element">ОКАТО: <span id="okato-res"></span> (<span id="okato-name-res"></span>)</div>	
+	</div>
+	<div id="tableWrapper">
+		<table class="compact row-border hover responsive nowrap" id="resultsTable" cellspacing="0">
+		    <thead>
+		    <tr></tr>
+		    </thead>
+		    <tbody></tbody>
+		    <tfoot></tfoot>
+		</table>
+	</div>
+</body>
+</html>
