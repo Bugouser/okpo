@@ -16,12 +16,12 @@
 <body>
 	<h3>Поиск ОКПО и других кодов по ИНН</h3>
 	<form class="flex-container">
-		<input type="text" id="inn" placeholder="Введите ИНН" value="" class="flex-element">
+		<input type="number" id="inn" placeholder="Введите ИНН" value="" class="flex-element" pattern="(\d*)" required="required">
 		<input type="hidden" id="okpo" value="">
 		<input type="hidden" id="ogrn" value="">
 		<input type="hidden" id="request-id" value="">
 		<img src="" id="captcha-img" alt="captcha">
-		<input type="text" id="captcha-text" placeholder="Введите код" value="" class="flex-element">
+		<input type="number" id="captcha-text" placeholder="Введите код" value="" class="flex-element" pattern="(\d{5}?)" required="required">
 		<input type="button" id="submit-bt" onclick="getInfo();" value="Найти" class="flex-element">
 	</form>
 	<div id='error-text' style="display:none;"  class="flex-element"></div>
