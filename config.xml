@@ -20,7 +20,7 @@
 		<plugin name="cordova-plugin-inappbrowser"  source="npm" spec="~1.3.0" />
 		<plugin name="cordova-plugin-network-information"  source="npm" spec="~1.2.0" />
 		<preference name="phonegap-version" value="cli-6.3.0" />
-		<preference name="android-build-tool" value="ant" />
+		<preference name="android-build-tool" value="gradle" />
 		<preference name="orientation" value="default" />
 		<preference name="fullscreen" value="false" />
 		<preference name="target-device" value="universal" />
@@ -68,26 +68,18 @@
 		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/ios/icon-small@3x.png" width="87" height="87" />
 		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/ios/icon-40.png" width="40" height="40" />
 		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/ios/icon-40@2x.png" width="80" height="80" />
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-736h.png" width="1242" height="2208" /> 
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242" /> 
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-667h.png" width="750" height="1334" /> 
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136" /> 
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default@2x~iphone.png" width="640" height="960" /> 
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default~iphone.png" width="320" height="480" /> 
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024" /> 
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768" /> 
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048" /> 
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536" /> 
 		</platform>
 		<platform name="android">
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-ldpi-icon.png" qualifier="ldpi" />
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-mdpi-icon.png" qualifier="mdpi" />
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-hdpi-icon.png" qualifier="hdpi" />
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-xhdpi-icon.png" qualifier="xhdpi" />
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-xxhdpi-icon.png" qualifier="xxhdpi" />
-		<icon src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/icon/android/drawable-xxxhdpi-icon.png" qualifier="xxxhdpi" />
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/android/drawable-port-ldpi-screen.png" qualifier="port-ldpi" />
-		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/android/drawable-land-ldpi-screen.png" qualifier="land-ldpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-ldpi-icon.png" qualifier="ldpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-mdpi-icon.png" qualifier="mdpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-hdpi-icon.png" qualifier="hdpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-xhdpi-icon.png" qualifier="xhdpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-xxhdpi-icon.png" qualifier="xxhdpi" />
+		<icon src="file://G:\Users\username\Desktop\okpo\okpo\www\res\icon\android\drawable-xxxhdpi-icon.png" qualifier="xxxhdpi" />
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/android/drawable-port-mdpi-screen.png" qualifier="port-mdpi" />
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/android/drawable-land-mdpi-screen.png" qualifier="land-mdpi" />
 		<splash src="G:\Users\username\Desktop\okpo\okpo\config.xmlwww/res/screen/android/drawable-port-hdpi-screen.png" qualifier="port-hdpi" />
@@ -103,4 +95,5 @@
 		</platform>
 		 <icon src="icon.png" />
 		<access origin="http://statreg.gks.ru" subdomains="false" />
+		<access origin="http://*" subdomains="false" />
 		</widget>
