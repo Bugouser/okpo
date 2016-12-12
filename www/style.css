@@ -1,5 +1,5 @@
 body {
-	padding: 20px;
+	padding: 10px;
 	font-size: 14px;
 	font-family: sans-serif;
 }
@@ -14,7 +14,9 @@ body {
 form .flex-element, input {
 	width: 90%;
 	align-items: center;
-	margin: 5px;
+	margin: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
 	height: 30px;
 	padding: 5px 10px;
 	box-sizing: content-box;
@@ -22,20 +24,39 @@ form .flex-element, input {
 
 .flex-element {
 	width: 90%;
-	margin: 5px;
+	margin: auto;
 }
 
 #error-text {
 	color: red;
 }
 
-th, td {
+td.name {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	white-space: normal !important;
+	display: block;
+	width: 140px;
 }
 
-.name {
-	min-width: 120px;
-	width: 120px;
+.parent * {
+    overflow: visible;
+    white-space: normal !important;
+}
+
+.dtr-title {
+    font-weight: bolder;
+    overflow: visible ;
+    white-space: normal ;
+}
+
+.dtr-data {
+    white-space: normal ;
+    min-width: 180px;
+	max-width:180px;
+	width: 180px;
+	
+}
+
+.dataTables_filter {
+	margin-left: 0 !important;
 }

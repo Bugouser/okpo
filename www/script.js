@@ -1,17 +1,14 @@
-// get captcha and request_id from server using regex
-function onReady() {
-    var reqIdRegEx = /request_id = (\d+);/g;
-    var captchaRegEx = /captcha_img = '(.+)';/g;
-
-    $.get('http://statreg.gks.ru')
-        .done((data) => {
-            var reqIdMatch = reqIdRegEx.exec($(data).text());
-            $('#request-id').val(reqIdMatch[1]);
-            var captchaIdMatch = captchaRegEx.exec($(data).text());
-            $('#captcha-img').attr('src', captchaIdMatch[1]);
-        })
-        .fail(failedCallback);
+function init() {
+    $(document).ajaxStart(function(){
+    $('#submit-bt').prop('disabled', 'disabled');
+    $('#loading').show();
+ }).ajaxStop(function(){
+    $('#submit-bt').prop('disabled', '');
+    $('#loading').hide();
+ });
+    doPost();
 }
+
 
 // 7707083893
 function getInfo() {
@@ -22,6 +19,10 @@ function getInfo() {
 
     if (!validateForm()) return;
 
+    doPost();
+}
+
+function doPost() {
     var payload = {
         "request_id": $('#request-id').val() * 1,
         "captcha": $('#captcha-text').val(),
@@ -36,7 +37,7 @@ function getInfo() {
             dataType: "json"
         })
         .done(function(data) {
-            if (!data.items.length) {
+            if (!data.items) {
                 $('#error-text').text("Сведений не найдено");
                 $('#error-text').show();
             } else {
@@ -61,7 +62,6 @@ function getInfo() {
                     $('#tableWrapper').show();
                     createTable(data.items);
                 }
-                
             }
             var newCaptcha = data.request_id.captcha_img;
             var newRequestId = data.request_id.request_id;
@@ -99,16 +99,20 @@ function failedCallback(error) {
     console.log(error);
     if (error.responseJSON) {
         var errorText = error.responseJSON.error;
+        // 1 request per 30 sec only
         if (error.status === 500 && error.responseJSON.lastAccessDelay) {
             $('#submit-bt').prop('disabled', 'disabled');
             lastAccessDelay = error.responseJSON.lastAccessDelay + 1;
             myTimer = setInterval(timeoutCallback, 1000);
             errorText = 'Следующий запрос можно отправить через ' + error.responseJSON.lastAccessDelay + ' сек.';
         }
+        // empty request on app load
+        if (error.status === 500 && error.responseJSON.error === 'no request_id') {
+            errorText = '';
+        }
         var newCaptcha = error.responseJSON.request_id.captcha_img;
         var newRequestId = error.responseJSON.request_id.request_id;
         $('#error-text').text(errorText).show();
-
         setNewParams(newCaptcha, newRequestId);
     } else {
         $('#error-text').text('Ошибка получения данных: ' + error.status + ' ' + error.statusText).show();

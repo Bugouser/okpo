@@ -10,13 +10,13 @@
 	<script src="./datatables.min.js"></script>
 	<script src="script.js"></script>
 	<script>
-		$(document).ready( onReady );
+		$(document).ready( init );
 	</script>
 </head>
 <body>
 	<h3>Поиск ОКПО и других кодов по ИНН</h3>
 	<form class="flex-container">
-		<input type="number" id="inn" placeholder="Введите ИНН" value="" class="flex-element" pattern="(\d*)" required="required">
+		<input type="number" id="inn" placeholder="Введите ИНН" value="7707083893" class="flex-element" pattern="(\d*)" required="required">
 		<input type="hidden" id="okpo" value="">
 		<input type="hidden" id="ogrn" value="">
 		<input type="hidden" id="request-id" value="">
@@ -36,7 +36,7 @@
 		<div class="flex-element">ОКТМО: <span id="oktmo-res"></span> (<span id="oktmo-name-res"></span>)</div>
 		<div class="flex-element">ОКАТО: <span id="okato-res"></span> (<span id="okato-name-res"></span>)</div>	
 	</div>
-	<div id="tableWrapper">
+	<div id="tableWrapper" class="">
 		<table class="compact row-border hover responsive nowrap" id="resultsTable" cellspacing="0">
 		    <thead>
 		    <tr></tr>
@@ -45,5 +45,7 @@
 		    <tfoot></tfoot>
 		</table>
 	</div>
+	<div id='loading' style="text-align: center;"><img src="./img/loading.gif"></div>
 </body>
+
 </html>
