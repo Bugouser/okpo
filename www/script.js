@@ -13,6 +13,7 @@ function onReady() {
         .fail(failedCallback);
 }
 
+
 // 7707083893
 function getInfo() {
     $('#result span, #error-text').text('');
@@ -22,7 +23,8 @@ function getInfo() {
 
     if (!validateForm()) return;
 
-    var payload = {
+    getInfo2();
+    /*var payload = {
         "request_id": $('#request-id').val() * 1,
         "captcha": $('#captcha-text').val(),
         "inn": $('#inn').val()
@@ -70,6 +72,58 @@ function getInfo() {
         .fail(failedCallback)
         .always(() => {
             $('#captcha-text').val('');
+        });*/
+}
+
+function getInfo2() {
+
+    var payload = {
+        "request_id": $('#request-id').val() * 1,
+        "captcha": $('#captcha-text').val(),
+        "inn": $('#inn').val()
+    };
+    //original code uses angular post with payload
+    $.ajax({
+            url: 'http://statreg.gks.ru',
+            type: "POST",
+            data: JSON.stringify(payload),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json"
+        })
+        .done(function(data) {
+            if (!data.items) {
+                $('#error-text').text("Сведений не найдено");
+                $('#error-text').show();
+            } else {
+                $('#inn').val('');
+                if (data.items.length === 1) {
+                    var oranizationInfo = data.items[0];
+                    $('#name-res').text(oranizationInfo.name);
+                    $('#inn-res').text(oranizationInfo.inn);
+                    $('#okpo-res').text(oranizationInfo.okpo);
+                    $('#ogrn-res').text(oranizationInfo.ogrn);
+                    $('#regdate-res').text(oranizationInfo.regdate);
+                    $('#okfs-res').text(oranizationInfo.okfs);
+                    $('#okfs-name-res').text(oranizationInfo.okfs_name);
+                    $('#okogu-res').text(oranizationInfo.okogu);
+                    $('#okogu-name-res').text(oranizationInfo.okogu_name);
+                    $('#oktmo-res').text(oranizationInfo.oktmo);
+                    $('#oktmo-name-res').text(oranizationInfo.oktmo_name);
+                    $('#okato-res').text(oranizationInfo.okato);
+                    $('#okato-name-res').text(oranizationInfo.okato_name);
+                    $('#result').show();
+                } else {
+                    $('#tableWrapper').show();
+                    createTable(data.items);
+                }
+            }
+            var newCaptcha = data.request_id.captcha_img;
+            var newRequestId = data.request_id.request_id;
+            setNewParams(newCaptcha, newRequestId);
+        })
+        .fail(failedCallback)
+        .always(() => {
+            $('#captcha-text').val('');
         });
 }
 
@@ -99,16 +153,20 @@ function failedCallback(error) {
     console.log(error);
     if (error.responseJSON) {
         var errorText = error.responseJSON.error;
+        // 1 request per 30 sec only
         if (error.status === 500 && error.responseJSON.lastAccessDelay) {
             $('#submit-bt').prop('disabled', 'disabled');
             lastAccessDelay = error.responseJSON.lastAccessDelay + 1;
             myTimer = setInterval(timeoutCallback, 1000);
             errorText = 'Следующий запрос можно отправить через ' + error.responseJSON.lastAccessDelay + ' сек.';
         }
+        // empty request on app load
+        if (error.status === 500 && error.responseJSON.error === 'no request_id') {
+            errorText = '';
+        }
         var newCaptcha = error.responseJSON.request_id.captcha_img;
         var newRequestId = error.responseJSON.request_id.request_id;
         $('#error-text').text(errorText).show();
-
         setNewParams(newCaptcha, newRequestId);
     } else {
         $('#error-text').text('Ошибка получения данных: ' + error.status + ' ' + error.statusText).show();
