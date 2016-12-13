@@ -7,6 +7,14 @@ function init() {
         if (!lastAccessDelay) $('#submit-bt').prop('disabled', '');
         $('#loading').hide();
     });
+    // pull to refresh
+    PullToRefresh.init({
+        mainElement: 'body', // above which element?
+        onRefresh: function () {
+            $('#request-id').val('');
+            doPost();
+        }
+    });
     // empty post for getting captcha and request_id
     doPost();
 }
@@ -72,7 +80,7 @@ function doPost() {
         .fail(failedCallback)
         .always(() => {
             $('#captcha-text').val('');
-            $('#captcha-text').focus();
+
         });
 }
 
