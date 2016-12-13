@@ -31,11 +31,13 @@ form .flex-element, input {
 	color: red;
 }
 
+/* table settings for responsive view*/
+
 td.name {
 	overflow: hidden;
 	text-overflow: ellipsis;
-	display: block;
-	width: 140px;
+	display: flex;
+	white-space: normal !important;
 }
 
 .parent * {
