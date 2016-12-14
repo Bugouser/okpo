@@ -30,14 +30,14 @@
     <!--plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" /!-->
     <!--plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" /!-->
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-    <icon src="raw.png" />
+    <icon src="appicon.png" />
     <platform name="android">
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-        <splash src="www/res/icon/android/web_hi_res_512.png" />
+        <splash src="www/res/icon/android/drawable-xhdpi-icon.png" />
     </platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
