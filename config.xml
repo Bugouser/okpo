@@ -31,6 +31,7 @@
     <!--plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" /!-->
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <icon src="www/img/appicon.png" />
+	<splash src="www/img/splash.png" />
     <platform name="android">
         <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
