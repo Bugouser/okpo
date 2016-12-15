@@ -4,17 +4,18 @@
 	<title>OKPO</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 	<meta charset="utf-8">
-	<script src="./jquery-3.1.1.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./style.css">
-	<link rel="stylesheet" type="text/css" href="./datatables.min.css">
-	<script src="./datatables.min.js"></script>
-	<script src="script.js"></script>
+	<script src="./js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./css/datatables.min.css">
+	<script src="./js/datatables.min.js"></script>
+	<script src="./js/pulltorefresh.js"></script>
+	<script src="./js/script.js"></script>
 	<script>
-		$(document).ready( onReady );
+		$(document).ready( init );
 	</script>
 </head>
 <body>
-	<h3>Поиск ОКПО и других кодов по ИНН</h3>
+	<h3 align="center">Поиск ОКПО по ИНН</h3>
 	<form class="flex-container">
 		<input type="number" id="inn" placeholder="Введите ИНН" value="" class="flex-element" pattern="(\d*)" required="required">
 		<input type="hidden" id="okpo" value="">
@@ -36,7 +37,7 @@
 		<div class="flex-element">ОКТМО: <span id="oktmo-res"></span> (<span id="oktmo-name-res"></span>)</div>
 		<div class="flex-element">ОКАТО: <span id="okato-res"></span> (<span id="okato-name-res"></span>)</div>	
 	</div>
-	<div id="tableWrapper">
+	<div id="tableWrapper" class="">
 		<table class="compact row-border hover responsive nowrap" id="resultsTable" cellspacing="0">
 		    <thead>
 		    <tr></tr>
@@ -45,5 +46,7 @@
 		    <tfoot></tfoot>
 		</table>
 	</div>
+	<div id='loading' style="text-align: center;"><img src="./img/loading.gif"></div>
 </body>
+
 </html>

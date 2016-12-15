@@ -32,10 +32,13 @@
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <icon src="www/img/appicon.png" />
 	<splash src="www/img/splash.png" />
+	<preference name="show-splash-screen-spinner" value="true" />
+	<preference name="auto-hide-splash-screen" value="true" />
+	<preference name="FadeSplashScreen " value="false" />
+	<preference name="SplashScreenDelay" value="5000" />
+	<preference name="SplashMaintainAspectRatio" value="true" />
 	<platform name="android">
-		<preference name="SplashScreenDelay" value="4000" />
-		<preference name="SplashMaintainAspectRatio" value="true" />
-        <icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
+		<icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />

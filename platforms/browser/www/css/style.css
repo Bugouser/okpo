@@ -1,0 +1,64 @@
+body {
+	padding: 10px;
+	font-size: 14px;
+	font-family: sans-serif;
+}
+
+.flex-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+form .flex-element, input {
+	width: 90%;
+	align-items: center;
+	margin: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	height: 30px;
+	padding: 5px 10px;
+	box-sizing: content-box;
+}
+
+.flex-element {
+	width: 90%;
+	margin: auto;
+}
+
+#error-text {
+	color: red;
+}
+
+/* table settings for responsive view*/
+
+td.name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	white-space: normal !important;
+}
+
+.parent * {
+    overflow: visible;
+    white-space: normal !important;
+}
+
+.dtr-title {
+    font-weight: bolder;
+    overflow: visible ;
+    white-space: normal ;
+}
+
+.dtr-data {
+    white-space: normal ;
+    min-width: 180px;
+	max-width:180px;
+	width: 180px;
+	
+}
+
+.dataTables_filter {
+	margin-left: 0 !important;
+}
