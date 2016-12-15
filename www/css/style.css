@@ -1,6 +1,6 @@
 body {
 	padding: 10px;
-	font-size: 14px;
+	font-size: 1.2em;
 	font-family: sans-serif;
 }
 
@@ -20,6 +20,7 @@ form .flex-element, input {
 	height: 30px;
 	padding: 5px 10px;
 	box-sizing: content-box;
+	font-size: 1.2em;
 }
 
 .flex-element {
