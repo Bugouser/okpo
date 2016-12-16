@@ -31,7 +31,7 @@
     <!--plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" /!-->
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
     <icon src="www/img/appicon.png" />
-	<splash src="www/img/splash.png" />
+	<splash src="www/img/splash2.png" />
 	<preference name="FadeSplashScreen" value="false" />
 	<preference name="SplashScreenDelay" value="3000" />
 	<preference name="SplashMaintainAspectRatio" value="true" />
