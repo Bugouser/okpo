@@ -108,7 +108,6 @@ function setNewParams(captcha, requestId) {
 var lastAccessDelay = 0; // flood protection on server (1 request per 30 sec)
 var myTimer; // countdown for next ajax request
 function failedCallback(error) {
-    //console.log(error);
     if (error.responseJSON) {
         var errorText = error.responseJSON.error;
         // 1 request per 30 sec only
@@ -122,15 +121,12 @@ function failedCallback(error) {
         if (error.status === 500 && error.responseJSON.error === 'no request_id') {
             errorText = '';
         }
-        if (error.status === 0) {
-            errorText = 'Нет доступа к сети. Проверьте подключение';
-        }
         $('#error-text').text(errorText).show();
         var newCaptcha = error.responseJSON.request_id.captcha_img;
         var newRequestId = error.responseJSON.request_id.request_id;
         setNewParams(newCaptcha, newRequestId);
     } else {
-        $('#error-text').text('Ошибка получения данных: ' + error.status + ' ' + error.statusText).show();
+        $('#error-text').text('Нет доступа к сети. Проверьте подключение.').show();
     }
 }
 
