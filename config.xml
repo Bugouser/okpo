@@ -41,14 +41,6 @@
         <icon density="xhdpi" src="www/res/icon/android/drawable-xhdpi-icon.png" />
         <icon density="xxhdpi" src="www/res/icon/android/drawable-xxhdpi-icon.png" />
         <icon density="xxxhdpi" src="www/res/icon/android/drawable-xxxhdpi-icon.png" />
-		<spalsh density="port-ldpi" src="www/res/screens/android/screen-ldpi-portrait.png" />
-		<spalsh density="land-ldpi" src="www/res/screens/android/screen-ldpi-landscape.png" />
-		<spalsh density="port-mdpi" src="www/res/screens/android/screen-mdpi-portrait.png" />
-		<spalsh density="land-mdpi" src="www/res/screens/android/screen-mdpi-landscape.png" />
-        <spalsh density="port-hdpi" src="www/res/screens/android/screen-hdpi-portrait.png" />
-		<spalsh density="land-hdpi" src="www/res/screens/android/screen-hdpi-landscape.png" />
-		<spalsh density="port-xhdpi" src="www/res/screens/android/screen-xhdpi-portrait.png" />
-		<spalsh density="land-xhdpi" src="www/res/screens/android/screen-xhdpi-landscape.png" />
 	</platform>
     <access origin="*" />
     <allow-intent href="http://*/*" />
