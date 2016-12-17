@@ -76,6 +76,7 @@ function doPost() {
             var newCaptcha = data.request_id.captcha_img;
             var newRequestId = data.request_id.request_id;
             setNewParams(newCaptcha, newRequestId);
+            $('html,body').animate({scrollTop: $('#results').offset().top}, 500);
         })
         .fail(failedCallback)
         .always(() => {

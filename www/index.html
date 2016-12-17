@@ -25,26 +25,28 @@
 		<input type="number" id="captcha-text" placeholder="Введите код" value="" class="flex-element" pattern="(\d{5}?)" required="required">
 		<input type="button" id="submit-bt" onclick="getInfo();" value="Найти" class="flex-element">
 	</form>
-	<div id='error-text' style="display:none;"  class="flex-element"></div>
-	<div id="result" style="display:none;"  class="flex-container">
-		<div class="flex-element"><span id="name-res"></span></div>
-		<div class="flex-element">ИНН: <span id="inn-res"></span></div>
-		<div class="flex-element">ОКПО: <span id="okpo-res"></span></div>
-		<div class="flex-element">ОГРН: <span id="ogrn-res"></span></div>
-		<div class="flex-element">Дата регистрации: <span id="regdate-res"></span></div>
-		<div class="flex-element">ОКФС: <span id="okfs-res"></span> (<span id="okfs-name-res"></span>)</div>
-		<div class="flex-element">ОКОГУ: <span id="okogu-res"></span> (<span id="okogu-name-res"></span>)</div>
-		<div class="flex-element">ОКТМО: <span id="oktmo-res"></span> (<span id="oktmo-name-res"></span>)</div>
-		<div class="flex-element">ОКАТО: <span id="okato-res"></span> (<span id="okato-name-res"></span>)</div>	
-	</div>
-	<div id="tableWrapper" class="">
-		<table class="compact row-border hover responsive nowrap" id="resultsTable" cellspacing="0">
-		    <thead>
-		    <tr></tr>
-		    </thead>
-		    <tbody></tbody>
-		    <tfoot></tfoot>
-		</table>
+	<div id='results'>
+		<div id='error-text' style="display:none;"  class="flex-element"></div>
+		<!--<div id="result" style="display:none;"  class="flex-container">
+			<div class="flex-element"><span id="name-res"></span></div>
+			<div class="flex-element">ИНН: <span id="inn-res"></span></div>
+			<div class="flex-element">ОКПО: <span id="okpo-res"></span></div>
+			<div class="flex-element">ОГРН: <span id="ogrn-res"></span></div>
+			<div class="flex-element">Дата регистрации: <span id="regdate-res"></span></div>
+			<div class="flex-element">ОКФС: <span id="okfs-res"></span> (<span id="okfs-name-res"></span>)</div>
+			<div class="flex-element">ОКОГУ: <span id="okogu-res"></span> (<span id="okogu-name-res"></span>)</div>
+			<div class="flex-element">ОКТМО: <span id="oktmo-res"></span> (<span id="oktmo-name-res"></span>)</div>
+			<div class="flex-element">ОКАТО: <span id="okato-res"></span> (<span id="okato-name-res"></span>)</div>	
+		</div>!-->
+		<div id="tableWrapper">
+			<table class="compact row-border hover responsive nowrap" id="resultsTable" cellspacing="0">
+			    <thead>
+			    <tr></tr>
+			    </thead>
+			    <tbody></tbody>
+			    <tfoot></tfoot>
+			</table>
+		</div>
 	</div>
 	<div id='loading' style="text-align: center;"><img src="./img/loading.gif"></div>
 </body>

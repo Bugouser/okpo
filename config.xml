@@ -33,8 +33,10 @@
     <icon src="www/img/appicon.png" />
 	<splash src="www/img/splash3.png" />
 	<preference name="FadeSplashScreen" value="false" />
-	<preference name="SplashScreenDelay" value="3000" />
+	<preference name="SplashScreenDelay" value="30000" />
 	<preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="auto-hide-splash-screen" value="false" />
+    <preference name="AutoHideSplashScreen" value="false" />
 	<platform name="android">
 		<icon density="mdpi" src="www/res/icon/android/drawable-mdpi-icon.png" />
         <icon density="hdpi" src="www/res/icon/android/drawable-hdpi-icon.png" />
